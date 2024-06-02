@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: payment-fe-pod
-        image: payment-image:1.0
+        image: public.ecr.aws/t9g0p6z9/payment-image:latest
         ports:
         - containerPort: 3000
 

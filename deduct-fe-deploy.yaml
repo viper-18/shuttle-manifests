@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: deduct-fe-pod
-        image: deduct-image:1.0
+        image: public.ecr.aws/t9g0p6z9/deduct-image:latest
         ports:
         - containerPort: 3000
 

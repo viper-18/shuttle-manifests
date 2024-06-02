@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: golang-be-pod
-        image: golang-be-image:1.0
+        image: public.ecr.aws/t9g0p6z9/shuttle-be:1.0
         ports:
         - containerPort: 3000
 
