@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deduct-fe-deployment
+  labels:
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deduct-fe
+  template:
+    metadata:
+      labels:
+        app: deduct-fe
+    spec:
+      containers:
+      - name: deduct-fe-pod
+        image: deduct-image:1.0
+        ports:
+        - containerPort: 3000
+

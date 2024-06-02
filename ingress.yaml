@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /deduct               # Route /deduct to the deduct frontend service
+        pathType: Prefix
+        backend:
+          service:
+            name: deduct-fe-service
+            port:
+              number: 3000
+      - path: /payment              # Route /payment to the payment frontend service
+        pathType: Prefix
+        backend:
+          service:
+            name: payment-fe-service
+            port:
+              number: 3000
+

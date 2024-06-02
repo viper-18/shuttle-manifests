@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-backend
+  labels:
+    tier: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: golang-be
+  template:
+    metadata:
+      labels:
+        app: golang-be
+    spec:
+      containers:
+      - name: golang-be-pod
+        image: golang-be-image:1.0
+        ports:
+        - containerPort: 3000
+

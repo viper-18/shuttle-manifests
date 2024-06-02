@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-fe-deployment
+  labels:
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: payment-fe
+  template:
+    metadata:
+      labels:
+        app: payment-fe
+    spec:
+      containers:
+      - name: payment-fe-pod
+        image: payment-image:1.0
+        ports:
+        - containerPort: 3000
+
